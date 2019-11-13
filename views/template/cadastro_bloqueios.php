@@ -1,8 +1,8 @@
-<?php $this->layout('layout', ['title' => 'User Profile']) ?>
+<?php $this->layout('layout', ['title' => 'Docente < Cadastro IFRS']) ?>
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12" style="margin-top:15px;">
             <form action="/bloqueio" method="post">
                 <input type='hidden' name='id' value=<?=uniqid()?> />
                 <div class="form-group">

@@ -8,4 +8,5 @@ Router::setDefaultNamespace('\App\Controller');
 Router::get('/', 'HomeController@index');
 Router::get('/bloqueio', 'HomeController@cadastroBloqueio');
 Router::post('/bloqueio', 'HomeController@gravarBloqueio');
+Router::get('/turma', 'TurmaController@index');
 Router::start();
