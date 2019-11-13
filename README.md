@@ -7,6 +7,7 @@
 
 ## Como startar o servidor
 ```shell
+composer install
 chmod 777 server.sh
 ./server
 ```
