@@ -1,11 +1,9 @@
-<?php 
-    include_once('header.php');
-?>
+<?php $this->layout('layout', ['title' => 'User Profile']) ?>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <form action="inserir_bloqueios.php" method="post">
+            <form action="/bloqueio" method="post">
                 <input type='hidden' name='id' value=<?=uniqid()?> />
                 <div class="form-group">
                     <label for="nome">Nome do Docente</label>
@@ -59,7 +57,3 @@
         </div>
     </div>
 </div>
-
-<?php
-    include_once('footer.php');
-?>

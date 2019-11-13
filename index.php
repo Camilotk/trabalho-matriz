@@ -1,13 +1,11 @@
 <?php 
-include_once('views/template/header.php');
+require "./vendor/autoload.php";
 
-?>
+use \Pecee\SimpleRouter\SimpleRouter as Router;
 
+Router::setDefaultNamespace('\App\Controller');
 
-
-<h1 class="text-center">Estou aqui</h1>
-
-
-<?php
-include_once('views/template/footer.php');
-?>
+Router::get('/', 'HomeController@index');
+Router::get('/bloqueio', 'HomeController@cadastroBloqueio');
+Router::post('/bloqueio', 'HomeController@gravarBloqueio');
+Router::start();
