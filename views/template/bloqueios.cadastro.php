@@ -40,11 +40,11 @@
                                         print
                                             "<tr>
                                                 <td>{$horarios[$i]}</td>
-                                                <td><input class=form-check-input type=checkbox name={$segunda}  value={$segunda}></td>
-                                                <td><input class=form-check-input type=checkbox name={$terca}    value={$terca} ></td>
-                                                <td><input class=form-check-input type=checkbox name={$quarta}   value={$quarta}></td>
-                                                <td><input class=form-check-input type=checkbox name={$quinta}   value={$quinta}></td>
-                                                <td><input class=form-check-input type=checkbox name={$sexta}    value={$sexta}></td>                                
+                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$segunda}></td>
+                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$terca} ></td>
+                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$quarta}></td>
+                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$quinta}></td>
+                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$sexta}></td>
                                             </tr>";
                                         }
                                 ?>

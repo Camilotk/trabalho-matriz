@@ -17,6 +17,6 @@ class TurmaController
 
     public function index()
     {
-        return $this->templates->render('turma'); 
+        return $this->templates->render('cadastro_turmas'); 
     }
 }
