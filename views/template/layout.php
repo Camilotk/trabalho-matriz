@@ -22,18 +22,18 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header" style="display: flex;">
+            <div class="sidebar-header d-print-none" style="display: flex;">
                 <img src="/assets/img/logo_ifrs_b.png" style="max-width: 26px; max-height: 35px" />
                 <h3 style="margin-left: 15px;">IFRS</h3>
             </div>
 
-            <ul class="list-unstyled components">
+            <ul class="list-unstyled components d-print-none">
                 <p>Sistema de cadastro de horários de Docentes e Disciplinas</p>
                 <li>
                     <a href="/">Home</a>
                 </li>
                 <li >
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cadastro</a>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="d-print-none dropdown-toggle">Cadastro</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <a href="/curso">Curso</a>
@@ -80,7 +80,7 @@
                     <a href="#" class="download">Download source</a>
                 </li> */?>
                 <li>
-                    <a href="https://ifrs.edu.br/bento/" class="article">Ir pro site do IFRS</a>
+                    <a href="https://ifrs.edu.br/bento/" class="d-print-none article">Ir pro site do IFRS</a>
                 </li>
             </ul>
         </nav>

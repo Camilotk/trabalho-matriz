@@ -51,6 +51,7 @@
             })
     })
     function printPage() {
+        $('#sidebar').toggleClass('active', true);
         window.print();
     }
     </script>
