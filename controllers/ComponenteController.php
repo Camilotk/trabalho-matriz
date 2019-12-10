@@ -2,45 +2,43 @@
 namespace App\Controller;
 
 use \League\Plates\Engine;
+use League\CSV\Writer;
+use League\CSV\Reader;
 use Pecee\Http\Request;
 
-class ProfessorController
+class ComponenteController
 {
     private $templates;
     private $csv_location;
     private $cabecalho = [
         "id",
         "nome",
-        "horarios"
+        "creditos",
+        "curso",
+        "periodo"
     ];
 
     public function __construct()
     {
         $templates = new Engine('./views/template');
         $this->templates = $templates;
-        $this->csv_location = 'assets/csv/professores.csv';
-    }
-    public function index()
-    {
-        return $this->templates->render('bloqueios.cadastro');
+        $this->csv_location = 'assets/csv/componentes.csv';
     }
 
     public function insert()
     {
-        $professor['id'] = $_POST['id'] ?? 0;
-        $professor['nome'] = $_POST['nome'] ?? "";
-        $professor['horarios'] = $_POST['horarios'] ?? [];
-        $horarios = "00";
-        foreach($professor['horarios'] as $horario)
-        {
-            $horarios = "$horarios/${horario}";
-        }
+        $componente['id'] = $_POST['id'] ?? 0;
+        $componente['nome'] = $_POST['comp'] ?? "";
+        $componente['creditos'] = $_POST['creditos'] ?? 0;
+        $componente['curso'] = $_POST['curso'] ?? "";
+        $componente['periodo'] = $_POST['periodo'] ?? 0;
+
         $sucesso = FALSE;
 
         if( file_exists($this->csv_location) )
         {
             $arquivo = fopen($this->csv_location, 'a');
-            $linha = "${professor['id']},${professor['nome']},${horarios}";
+            $linha = "${componente['id']},${componente['nome']},${componente['creditos']},${componente['curso']},${componente['periodo']}";
             fwrite($arquivo, $linha . PHP_EOL, 1000);
             fclose($arquivo);
         } else {
@@ -48,10 +46,10 @@ class ProfessorController
             $linha = "id";
             foreach($this->cabecalho as $info)
             {
-                if($info !== "id") $linha = "${linha},${info}";
+                if($info !== "id") $linha = "$linha,${info}";
             }
             fwrite($arquivo, $linha . PHP_EOL, 1000);
-            $linha = "${professor['id']},${professor['nome']},${horarios}";
+            $linha = "${componente['id']},${componente['nome']},${componente['creditos']},${componente['curso']},${componente['periodo']}";
             fwrite($arquivo, $linha . PHP_EOL, 1000);
             fclose($arquivo);
         }
@@ -59,19 +57,26 @@ class ProfessorController
         return $sucesso;
     }
 
-    public function list_teachers()
+    public function list_components()
     {
         $arquivo = fopen($this->csv_location, 'r');
-        $professors = [];
+        $componentes = [];
         while(($linha = fgetcsv($arquivo, 1000, ',')) !== FALSE){
-            $professors[] = [
+            $componentes[] = [
                 'id' => $linha[0],
                 'nome' => $linha[1],
-                'horarios' => explode("/", $linha[2])
+                'credito' => $linha[2],
+                'curso' => $linha[3],
+                'periodo' => $linha[4]
             ];
         }
         fclose($arquivo);
         header('content-type: application/json');
-        print json_encode(array_slice($professors, 1));
+        print json_encode(array_slice($componentes, 1));
+    }
+
+    public function index()
+    {
+        return $this->templates->render('componentes.cadastro');
     }
 }

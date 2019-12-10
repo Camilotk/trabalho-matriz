@@ -27,9 +27,10 @@
           Cadastros
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/curso">Curso</a>
+          <a class="dropdown-item" href="/componente">Componente</a>
           <a class="dropdown-item" href="/bloqueio">Docente</a>
           <a class="dropdown-item" href="/turma">Turma</a>
-          <a class="dropdown-item" href="#">Disciplina</a>
         </div>
       </li>
 <?php /* <li class="nav-item">
@@ -40,10 +41,12 @@
 </nav>
 </head>
 
-<?=$this->section('content')?>
+<?=$this->section('content');?>
 
-    <script src="assets/js/jquery.slim.min.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<?=$this->section('script');?>
 </body>
 </html>
