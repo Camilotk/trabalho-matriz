@@ -20,10 +20,17 @@ class ProfessorController
         $this->templates = $templates;
         $this->csv_location = 'assets/csv/professores.csv';
     }
+
     public function index()
     {
         return $this->templates->render('bloqueios.cadastro');
     }
+
+    public function show()
+    {
+        return $this->templates->render('bloqueios.listagem');
+    }
+
 
     public function insert()
     {
@@ -56,7 +63,7 @@ class ProfessorController
             fclose($arquivo);
         }
 
-        return $sucesso;
+        return $this->templates->render('bloqueios.listagem');
     }
 
     public function list_teachers()

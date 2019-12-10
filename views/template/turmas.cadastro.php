@@ -14,11 +14,13 @@
                     <label>Componente Curricular</label> <br>
                         <!--<input type="text" name="componente" placeholder="Digite a matéria para essa turma" class="form-control" required><br> -->
                         <select required id="componente_select" name="componente" class="custom-select"><br>
+                            <option value="">Escolha o componente...</option>
                         </select><br><br>
 
                     <label>Professor</label> <br>
                        <!-- <input type="text" name="docente" placeholder="Digite o docente para essa matéria" class="form-control" required><br> -->
                         <select required id="docente_select" name="docente" class="custom-select">
+                            <option value="">Escolha o docente...</option>
                         </select><br><br>
                     <button class="btn btn-success" type="submit" onclick=" ">Salvar</button>
                 </form>

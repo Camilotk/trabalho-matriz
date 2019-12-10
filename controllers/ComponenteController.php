@@ -54,7 +54,7 @@ class ComponenteController
             fclose($arquivo);
         }
 
-        return $sucesso;
+        return $this->templates->render('componentes.listagem');
     }
 
     public function list_components()
@@ -78,5 +78,10 @@ class ComponenteController
     public function index()
     {
         return $this->templates->render('componentes.cadastro');
+    }
+
+    public function show()
+    {
+        return $this->templates->render('componentes.listagem');
     }
 }

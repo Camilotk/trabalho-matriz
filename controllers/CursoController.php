@@ -20,11 +20,16 @@ class CursoController
         $this->csv_location = 'assets/csv/cursos.csv';
     }
 
-
     public function index()
     {
         return $this->templates->render('cursos.cadastro');
     }
+
+    public function show()
+    {
+        return $this->templates->render('cursos.listagem');
+    }
+
 
     public function insert()
     {
@@ -52,7 +57,7 @@ class CursoController
             fclose($arquivo);
         }
 
-        return $sucesso;
+        return $this->templates->render('cursos.listagem');
     }
 
     public function list_course()

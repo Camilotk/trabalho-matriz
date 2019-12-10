@@ -28,6 +28,12 @@ class TurmaController
         return $this->templates->render('turmas.cadastro');
     }
 
+    public function show()
+    {
+        return $this->templates->render('turmas.listagem');
+    }
+
+
     public function insert()
     {
         $turma['ano'] = $_POST['ano'] ?? 2020;
@@ -56,7 +62,7 @@ class TurmaController
             fclose($arquivo);
         }
 
-        return $sucesso;
+        return $this->templates->render('turmas.listagem');
     }
 
     public function list_classes()

@@ -1,7 +1,4 @@
-<?php
-require 'vendor/autoload.php';
-use GuzzleHttp\Client;
-$this->layout('layout', ['title' => 'Componentes Curriculares < Cadastro do IFRS']) ?>
+<?php $this->layout('layout', ['title' => 'Componentes Curriculares < Cadastro do IFRS']) ?>
 
 <div class="container">
     <fieldset>
@@ -16,7 +13,7 @@ $this->layout('layout', ['title' => 'Componentes Curriculares < Cadastro do IFRS
 
          <label>Curso</label> <br>
          <select required id="curso_select" name="curso" class="custom-select">
-            <option>Escolha o curso...</option>
+            <option value="">Escolha o curso...</option>
          </select><br><br>
 
          <label>Período</label><br>
