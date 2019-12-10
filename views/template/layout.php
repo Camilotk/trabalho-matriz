@@ -29,7 +29,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/curso">Curso</a>
           <a class="dropdown-item" href="/componente">Componente</a>
-          <a class="dropdown-item" href="/bloqueio">Docente</a>
+          <a class="dropdown-item" href="/docente">Docente</a>
           <a class="dropdown-item" href="/turma">Turma</a>
         </div>
       </li>

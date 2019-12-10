@@ -8,10 +8,11 @@ Router::setDefaultNamespace('\App\Controller');
 // Rotas Home
 Router::get('/', 'HomeController@index');
 // Rotas Bloqueio
-Router::get('/professor', 'ProfessorController@index');
-Router::post('/professor', 'ProfessorController@insert');
+Router::get('/docente', 'ProfessorController@index');
+Router::post('/docente', 'ProfessorController@insert');
 // Rotas Turma
 Router::get('/turma', 'TurmaController@index');
+Router::post('/turma', 'TurmaController@insert');
 // Rotas Curso
 Router::get('/curso', 'CursoController@index');
 Router::post('/curso', 'CursoController@insert');

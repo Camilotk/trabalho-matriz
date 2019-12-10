@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12" style="margin-top:15px;">
-            <form action="/professor" method="post">
+            <form action="/docente" method="post">
                 <input type='hidden' name='id' value=<?=uniqid()?> />
                 <div class="form-group">
                     <label for="nome">Nome do Docente</label>
