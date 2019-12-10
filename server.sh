@@ -1,2 +1,2 @@
 #!/bin/bash
-php -S localhost:3001
+php -S localhost:3002

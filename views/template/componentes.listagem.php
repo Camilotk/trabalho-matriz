@@ -24,6 +24,7 @@
                 </div>
         </div>
     </div>
+<button class="btn btn-success d-print-none" onclick="printPage()">Imprimir</button>
 </div>
 
 <?php $this->start('script') ?>
@@ -38,5 +39,8 @@
                 })
             })
     })
+    function printPage() {
+        window.print();
+    }
     </script>
 <?php $this->end() ?>
