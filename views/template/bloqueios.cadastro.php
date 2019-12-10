@@ -1,11 +1,21 @@
 <?php $this->layout('layout', ['title' => 'Docente < Cadastro IFRS']) ?>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12" style="margin-top:15px;">
+    <nav style="margin-top: 5px;" aria-label="breadcrumb">
+        <ol class="breadcrumb d-print-none" style="background-color: #fff !important; margin-bottom: 5px;">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">Cadastro</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/docente">Docente</a></li>
+        </ol>
+    </nav>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" style="margin-top:5px;">
+            <legend><h3>Formulário de Cadastro de Docentes</h3></legend>
             <form action="/docente" method="post">
                 <input type='hidden' name='id' value=<?=uniqid()?> />
-                <div class="form-group">
+                <div class="form-group" style="margin-top: 15px;">
                     <label for="nome">Nome do Docente</label>
                     <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite o nome do docente">
                 </div>

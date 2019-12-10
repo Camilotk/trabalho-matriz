@@ -1,8 +1,17 @@
 <?php $this->layout('layout', ['title' => 'Componentes Curriculares < Cadastro do IFRS']) ?>
 
-<div class="container">
+<div class="container-fluid">
+    <div class="row">
+    <nav style="margin-top: 5px;" aria-label="breadcrumb">
+        <ol class="breadcrumb d-print-none" style="background-color: #fff !important; margin-bottom: 5px;">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">Cadastro</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/componente">Componente</a></li>
+        </ol>
+    </nav>
+    </div>
     <fieldset>
-      <legend><h3><br>Formulário de Cadastro de Componentes Curriculares</h3></legend>
+      <legend><h3>Formulário de Cadastro de Componentes Curriculares</h3></legend>
       <form action="/componente" method="post" class="form-sigin">
          <input type='hidden' name='id' value=<?=uniqid()?> />
          <label>Componente Curricular</label> <br>
