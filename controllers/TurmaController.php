@@ -65,8 +65,10 @@ class TurmaController
         $turmas = [];
         while(($linha = fgetcsv($arquivo, 1000, ',')) !== FALSE){
             $turmas[] = [
-                'id' => $linha[0],
-                'nome' => $linha[1],
+                'ano' => $linha[0],
+                'semestre' => $linha[1],
+                'componente' => $linha[2],
+                'docente' => $linha[3]
             ];
         }
         fclose($arquivo);
