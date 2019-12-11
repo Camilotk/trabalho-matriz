@@ -2,7 +2,7 @@
         <div class="container-fluid">
         <div class="row">
             <nav style="margin-top: 5px;" aria-label="breadcrumb">
-                <ol class="breadcrumb d-print-none" style="background-color: #fff !important; margin-bottom: 5px;">
+                <ol class="breadcrumb d-print-none" style="background-color: #fafafa !important; margin-bottom: 5px;">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item">Cadastro</li>
                     <li class="breadcrumb-item active" aria-current="page"><a href="/curso">Curso</a></li>

@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row">
     <nav style="margin-top: 5px;" aria-label="breadcrumb">
-        <ol class="breadcrumb d-print-none" style="background-color: #fff !important; margin-bottom: 5px;">
+        <ol class="breadcrumb d-print-none" style="background-color: #fafafa !important; margin-bottom: 5px;">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item">Listagem</li>
             <li class="breadcrumb-item active" aria-current="page"><a href="/curso/listagem">Curso</a></li>
@@ -32,7 +32,10 @@
                 </div>
         </div>
     </div>
-<button class="btn btn-success d-print-none" onclick="printPage()">Imprimir</button>
+<button class="btn btn-success d-print-none" onclick="printPage()">
+<i class="fas fa-print"></i>
+Imprimir
+</button>
 </div>
 
 <?php $this->start('script') ?>

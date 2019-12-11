@@ -1,53 +1,164 @@
 <?php $this->layout('layout', ['title' => 'Home < Cadastro do IFRS']) ?>
 
-<div class="container-fluid">
-    <div class="row">
-    <h2 style="margin: 30px 0 0 15px;">Horários Cadastrados</h2>
-        <div class="col-sm-12">
-                <input type='hidden' name='id' value=<?=uniqid()?> />
-                <div class="row" style='margin-top:20px'>
-                    <div class="col-sm-12">
-                        <table class="table">
-                            <thead style="background-color:#28A745;color:white;">
-                                <tr>
-                                    <th>Período</th>
-                                    <th>Segunda-feira</th>
-                                    <th>Terça-feira</th>
-                                    <th>Quarta-feira</th>
-                                    <th>Quinta-feira</th>
-                                    <th>Sexta-feira</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                    $horarios = [
-                                        "07:30 - 08:20", "08:20 - 09:10", "09:10 - 10:00", "10:10 - 11:00", "11:00 - 11:50",
-                                        "13:10 - 14:00", "14:00 - 14:50", "14:50 - 15:40", "15:50 - 16:40", "16:40 - 17:30",
-                                        "17:55 - 18:45", "18:45 - 19:35", "19:35 - 20:25", "20:35 - 21:25", "21:25 - 22:15"
-                                    ];
+<h1 style="margin-left: 15px;">Horários</h1>
 
-                                    for($i = 0; $i < count($horarios); $i++){
-                                        $segunda = $i + 1;
-                                        $terca   = $i + 16;
-                                        $quarta  = $i + 31;
-                                        $quinta  = $i + 46;
-                                        $sexta   = $i + 61;
-                                        print
-                                            "<tr>
-                                                <td>{$horarios[$i]}</td>
-                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$segunda}></td>
-                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$terca} ></td>
-                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$quarta}></td>
-                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$quinta}></td>
-                                                <td><input class=form-check-input type=checkbox name='horarios[]'  value={$sexta}></td>
-                                            </tr>";
-                                        }
-                                ?>
-                            </tbody>
-                        </table>
-                        </table>
-                    </div>
-                </div>
-        </div>
-    </div>
+<a class="btn btn-success d-print-none" style="margin-left: 15px; margin-bottom: 5px;" data-toggle="collapse" href="#componentes" role="button" aria-expanded="false" aria-controls="componentes">
+   <i class="fas fa-plus"></i>
+   Adicionar
+  </a>
+
+
+<div id="componentes" ondragenter="dragenter(event)" ondragleave="dragleave(event)" ondragover="dragover(event)"
+    ondrop="drop(event)" class="disciplinas collapse d-print-none">
+
+    <?php $this->start('script') ?>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/api/componente',
+                method: 'GET'
+            }).done(function (response) {
+                response.forEach(function (componente) {
+                    for (var i = 0; i < componente.credito; i++) {
+                        $('#componentes').append(
+                            '<span draggable=true ondragstart=dragstart(this) ondrag=drag(this) ondragend=dragend(this) ><strong>' +
+                            componente.nome + '</strong><br>'+componente.curso+'</span>')
+                    }
+                })
+            })
+        })
+
+        function printPage() {
+            $('#sidebar').toggleClass('active', true);
+            window.print();
+        }
+    </script>
+    <?php $this->end() ?>
+
 </div>
+
+<div class="semana">
+    <ul>
+        <?php
+
+            $horarios = [
+                    "07:30 - 08:20", "08:20 - 09:10", "09:10 - 10:00", "10:10 - 11:00", "11:00 - 11:50",
+                    "13:10 - 14:00", "14:00 - 14:50", "14:50 - 15:40", "15:50 - 16:40", "16:40 - 17:30",
+                    "17:55 - 18:45", "18:45 - 19:35", "19:35 - 20:25", "20:35 - 21:25", "21:25 - 22:15"
+            ];
+
+            print "<li id=li >Período</li>";
+
+            for($i = 0; $i < count($horarios); $i++){
+                print "<li id=li>{$horarios[$i]}</li>";
+            }
+        ?>
+    </ul>
+    <ul ondragenter="dragenter(event)" ondragleave="dragleave(event)" ondragover="dragover(event)" ondrop="drop(event)">
+        <li id="li" class="bloqueado">Segunda-feira</li>
+        <?php
+
+            for($i = 0; $i < count($horarios); $i++){
+                $segunda = $i + 1;
+                print "<li id=li class={$segunda}></li>";
+            }
+        ?>
+    </ul>
+    <ul ondragenter="dragenter(event)" ondragleave="dragleave(event)" ondragover="dragover(event)" ondrop="drop(event)">
+        <li id="li" class="bloqueado">Terça-feira</li>
+        <?php
+            for($i = 0; $i < count($horarios); $i++){
+                $terca = $i + 16;
+                print "<li id=li class={$terca}></li>";
+            }
+        ?>
+    </ul>
+    <ul ondragenter="dragenter(event)" ondragleave="dragleave(event)" ondragover="dragover(event)" ondrop="drop(event)">
+        <li id="li" class="bloqueado">Quarta-feira</li>
+        <?php
+            for($i = 0; $i < count($horarios); $i++){
+                $quarta = $i + 31;
+                print "<li id=li class={$quarta}></li>";
+            }
+        ?>
+    </ul>
+    <ul ondragenter="dragenter(event)" ondragleave="dragleave(event)" ondragover="dragover(event)" ondrop="drop(event)">
+        <li id="li" class="bloqueado">Quinta-feira</li>
+        <?php
+            for($i = 0; $i < count($horarios); $i++){
+                $quinta = $i + 46;
+                print "<li id=li class={$quinta}></li>";
+            }
+        ?>
+    </ul>
+    <ul ondragenter="dragenter(event)" ondragleave="dragleave(event)" ondragover="dragover(event)" ondrop="drop(event)">
+        <li id="li" class="bloqueado">Sexta-feira</li>
+        <?php
+            for($i = 0; $i < count($horarios); $i++){
+                $sexta = $i + 61;
+                print "<li id=li class={$sexta}></li>";
+            }
+        ?>
+    </ul>
+</div>
+
+<button style="margin: -15px 0 0 15px;" class="btn btn-success d-print-none" onclick="printPage()">
+<i class="fas fa-print"></i>
+Imprimir
+</button>
+
+<script>
+    var bloqueios = [];
+
+    var span = null;
+
+    function dragstart(elemento) {
+        elemento.style.color = 'blue'
+        elemento.style.backgroundColor = 'red'
+        span = elemento
+        console.log('começou')
+    }
+
+    function dragend(elemento) {
+        elemento.style.color = ''
+        elemento.style.backgroundColor = ''
+        console.log('terminou')
+    }
+
+    function drag(elemento) {
+        //console.log('continua')
+    }
+
+    function dragenter(event) {
+        if (event.target.className !== 'bloqueado')
+            event.target.style.border = 'dashed 1px gray'
+    }
+
+    function dragleave(event) {
+        if (event.target.className !== 'bloqueado')
+            event.target.style.border = ''
+    }
+
+    function dragover(event) {
+        if (event.target.className !== 'bloqueado' &&
+            !bloqueios.includes(event.target.getAttribute('class')))
+            event.preventDefault();
+    }
+
+    function drop(event) {
+        event.target.style.border = ''
+
+        let elemento;
+        if (event.target.nodeName == 'SPAN')
+            elemento = event.target.parentNode
+        else
+            elemento = event.target
+
+
+        if (elemento.childNodes.length > 0)
+            span.parentNode.appendChild(elemento.childNodes[0])
+
+        elemento.appendChild(span)
+        span = null
+    }
+</script>

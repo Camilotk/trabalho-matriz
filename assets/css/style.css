@@ -165,3 +165,38 @@ a.article:hover {
         display: none;
     }
 }
+
+/*DRAG AND DROP*/
+
+*{box-sizing: border-box; margin: 0; padding:0}
+ul{list-style-type:none}
+div.semana{
+    display:flex;
+    margin: 15px;
+}
+div.semana>ul{
+    flex: 1;
+}
+div.disciplinas{
+    flex: 1;
+    margin: 0 15px;
+}
+span{
+    display: inline-block;
+    padding: 10px;
+    border:solid 1px gray;
+    user-select:none;
+    height: 60px;
+    min-width: 200px;
+    background-color: darkgray;
+    opacity: 95%;
+    border-radius: 5px;
+    overflow: hidden;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#li{height: 60px; display:flex; border:solid 1px black}
+#li>span{flex:1; border-left: solid 8px green}
+#li:first-child{height:30px}
