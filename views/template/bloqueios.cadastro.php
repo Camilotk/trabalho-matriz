@@ -19,6 +19,7 @@
                     <label for="nome">Nome do Docente</label>
                     <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite o nome do docente">
                 </div>
+                <legend><h6>Bloqueios do Docente</h6></legend>
                 <div class="row" style='margin-top:20px'>
                     <div class="col-sm-12">
                         <table class="table">
