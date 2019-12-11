@@ -4,7 +4,7 @@
 - [pecee/simple-php-router](https://github.com/skipperbent/simple-php-router): Responsável por todas as rotas facilitadas da aplicação.
 - [league/plates](http://platesphp.com/): Manipulação e Renderização de views em PHP.
 
-## Como startar o servidor
+## Como iniciar o servidor
 ### No Linux
 ```shell
 composer install
