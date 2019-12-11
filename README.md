@@ -5,11 +5,18 @@
 - [league/plates](http://platesphp.com/): Manipulação e Renderização de views em PHP.
 
 ## Como startar o servidor
+### No Linux
 ```shell
 composer install
+composer dump-autoload -o
 chmod 777 server.sh
-./server
+# necessário dar permissão aos controllers para que possam alterar arquivos 
+chmod 777 controllers/*
+./server.sh
 ```
+### No Windows
+Bem, no Windows é necessário usar os mesmos comandos do composer, como não há um script de Shell/Powershell, basta utilizar os mesmos comandos no GitBash, WSL ou bash no Powershell. Ou dar uma estudada no Local Server do PHP e rodar por ele. **Não** vai rodar pelo XAMPP/Apache corretamente, pois a forma como ambos leem arquivos e rotas é completamente diferente do local server.
+
 ## Estrutura
 ```
 ----trabalho-matriz : Pasta principal do projeto
