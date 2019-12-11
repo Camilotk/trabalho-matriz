@@ -40,13 +40,6 @@
 <div class="semana">
     <ul>
         <?php
-
-            $horarios = [
-                    "07:30 - 08:20", "08:20 - 09:10", "09:10 - 10:00", "10:10 - 11:00", "11:00 - 11:50",
-                    "13:10 - 14:00", "14:00 - 14:50", "14:50 - 15:40", "15:50 - 16:40", "16:40 - 17:30",
-                    "17:55 - 18:45", "18:45 - 19:35", "19:35 - 20:25", "20:35 - 21:25", "21:25 - 22:15"
-            ];
-
             print "<li id=li >Período</li>";
 
             for($i = 0; $i < count($horarios); $i++){
@@ -116,17 +109,11 @@ Imprimir
         elemento.style.color = 'blue'
         elemento.style.backgroundColor = 'red'
         span = elemento
-        console.log('começou')
     }
 
     function dragend(elemento) {
         elemento.style.color = ''
         elemento.style.backgroundColor = ''
-        console.log('terminou')
-    }
-
-    function drag(elemento) {
-        //console.log('continua')
     }
 
     function dragenter(event) {
