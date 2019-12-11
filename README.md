@@ -4,12 +4,19 @@
 - [pecee/simple-php-router](https://github.com/skipperbent/simple-php-router): Responsável por todas as rotas facilitadas da aplicação.
 - [league/plates](http://platesphp.com/): Manipulação e Renderização de views em PHP.
 
-## Como startar o servidor
+## Como iniciar o servidor
+### No Linux
 ```shell
 composer install
+composer dump-autoload -o
 chmod 777 server.sh
-./server
+# necessário dar permissão aos controllers para que possam alterar arquivos 
+chmod 777 controllers/*
+./server.sh
 ```
+### No Windows
+Bem, no Windows é necessário usar os mesmos comandos do composer, como não há um script de Shell/Powershell, basta utilizar os mesmos comandos no GitBash, WSL ou bash no Powershell. Ou dar uma estudada no [Embedded Server](https://www.php.net/manual/pt_BR/features.commandline.webserver.php) do PHP e rodar por ele. **Não** vai rodar pelo XAMPP/Apache corretamente, pois a forma como ambos leem arquivos e rotas é completamente diferente do servidor embutido do PHP.
+
 ## Estrutura
 ```
 ----trabalho-matriz : Pasta principal do projeto
