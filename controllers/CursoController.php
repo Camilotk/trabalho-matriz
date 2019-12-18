@@ -1,77 +1,38 @@
 <?php
+
 namespace App\Controller;
 
-use \League\Plates\Engine;
-use Pecee\Http\Request;
+use App\Model\Curso;
 
 class CursoController
 {
-    private $templates;
-    private $csv_location;
-    private $cabecalho = [
-        "id",
-        "nome",
-    ];
-
-    public function __construct()
-    {
-        $templates = new Engine('./views/template');
-        $this->templates = $templates;
-        $this->csv_location = 'assets/csv/cursos.csv';
-    }
-
     public function index()
     {
-        return $this->templates->render('cursos.cadastro');
+        $curso_model = new Curso();
+        return $curso_model->getTemplate('cursos.cadastro');
     }
 
     public function show()
     {
-        return $this->templates->render('cursos.listagem');
+        $curso_model = new Curso();
+        return $curso_model->getTemplate('cursos.listagem');
     }
 
 
     public function insert()
     {
+        $curso_model = new Curso();
         $curso['id'] = $_POST['id'] ?? 0;
         $curso['nome'] = $_POST['curso'] ?? "";
 
-        $sucesso = FALSE;
+        $curso_model->insertCsv($curso);
 
-        if( file_exists($this->csv_location) )
-        {
-            $arquivo = fopen($this->csv_location, 'a');
-            $linha = "${curso['id']},${curso['nome']}";
-            fwrite($arquivo, $linha . PHP_EOL, 1000);
-            fclose($arquivo);
-        } else {
-            $arquivo = fopen($this->csv_location, 'a');
-            $linha = "id";
-            foreach($this->cabecalho as $info)
-            {
-                if($info !== "id") $linha = "$linha,${info}";
-            }
-            fwrite($arquivo, $linha . PHP_EOL, 1000);
-            $linha = "${curso['id']},${curso['nome']}";
-            fwrite($arquivo, $linha . PHP_EOL, 1000);
-            fclose($arquivo);
-        }
-
-        return $this->templates->render('cursos.listagem');
+        return $curso_model->getTemplate('cursos.listagem');
     }
 
     public function list_course()
     {
-        $arquivo = fopen($this->csv_location, 'r');
-        $cursos = [];
-        while(($linha = fgetcsv($arquivo, 1000, ',')) !== FALSE){
-            $cursos[] = [
-                'id' => $linha[0],
-                'nome' => $linha[1],
-            ];
-        }
-        fclose($arquivo);
-        header('content-type: application/json');
-        print json_encode(array_slice($cursos, 1));
+        $curso_model = new Curso();
+        print $curso_model->getJson();
     }
 }

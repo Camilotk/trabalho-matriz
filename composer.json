@@ -3,15 +3,14 @@
     "description": "Gerenciador de Aulas semestrais, linkando horários, matérias e professores",
     "type": "project",
     "require": {
-        "league/csv": "^9.4",
         "pecee/simple-router": "4.2.0.6",
-        "guzzlehttp/guzzle": "~6.0",
         "league/plates": "^3.3"
     },
     "license": "GPL v3",
     "autoload": {
         "psr-4": {
-            "App\\Controller\\": "controllers/"
+            "App\\Controller\\": "controllers/",
+            "App\\Model\\": "models/"
         }
     },
     "authors": [
