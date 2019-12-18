@@ -7,7 +7,7 @@ Para este trabalho foi utilizado PHP (lang), MVC (arq.), API (arq.), JQuery (fro
 
 **enunciado:**
 ```
-Você foi contratado pela instituição de ensino Conhecimento é Poder para fazer o que segue:
+Você foi contratado pela instituição de ensino  para fazer o que segue:
 
 - Possibilitar que a instituição cadastre cursos (nome do curso);
 - Possibilitar que a instituição cadastre componentes curriculares (nome do componente, 
