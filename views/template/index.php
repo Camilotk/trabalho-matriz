@@ -41,7 +41,7 @@
     <ul>
         <?php
             print "<li id=li >Período</li>";
-
+            
             for($i = 0; $i < count($horarios); $i++){
                 print "<li id=li>{$horarios[$i]}</li>";
             }

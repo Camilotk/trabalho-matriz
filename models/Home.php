@@ -18,6 +18,11 @@ class Home
         $this->templates = $templates;
     }
 
+    public function getTemplate($template, $vars)
+    {
+        return $this->templates->render($template, $vars);
+    }
+
     public function getHorarios(): array
     {
         return $this->horarios;

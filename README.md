@@ -1,7 +1,7 @@
 # Trabalho Matriz Horario
 Este é um trabalho de controle de horários do IFRS feito em grupo com os colegas [Douglas Rauschkolb]() e <u>Marcos Gava</u> para a Disciplina de Princípios de Desenvolvimento para Internet do IFRS do segundo semestre de 2019.
 
-Para este trabalho foi utilizado PHP (lang), MVC (arq.), API (arq.), JQuery (front) e Bootstrap (front) .
+Para este trabalho foi utilizado PHP (lang), MVC (arq.), API (arq.), JQuery (front) e Bootstrap (front) sem utilizar nenhum framework - codado manualmente.
 
 ![exemplo de tela](screen-example.gif)
 
@@ -10,13 +10,18 @@ Para este trabalho foi utilizado PHP (lang), MVC (arq.), API (arq.), JQuery (fro
 Você foi contratado pela instituição de ensino Conhecimento é Poder para fazer o que segue:
 
 - Possibilitar que a instituição cadastre cursos (nome do curso);
-- Possibilitar que a instituição cadastre componentes curriculares (nome do componente, creditos, curso, período na grade curricular)
+- Possibilitar que a instituição cadastre componentes curriculares (nome do componente, 
+creditos, curso, período na grade curricular)
 - Possibilitar que a instituição cadastre docentes (nome)
 - Possibilitar que a instituição cadastre os horários de bloqueios para cada docente;
-- Possibilitar que a instituição oferte turmas ao londo de um semestre (ano, semestre, componente, docente);
+- Possibilitar que a instituição oferte turmas ao londo de um semestre (ano, semestre,
+ componente, docente);
 - Possibilitar que a instituição gere pdf dos horários de uma turma;
 - Possibilitar que a instituição gere pdf dos horários de um docente.
-- Possibilitar que a instituição organize os componentes durante a semana. Ex: Definir que Algoritmos no 1o semestre de 2020 será na segunda-feira nos 4 últimos períodos; Porém, precisa verificar se o professor não bloqueou esse período ou se o docente já ministra alguma disciplina em outra turma/curso no mesmo período.
+- Possibilitar que a instituição organize os componentes durante a semana. Ex: Definir que
+ Algoritmos no 1o semestre de 2020 será na segunda-feira nos 4 últimos períodos; Porém, precisa
+  verificar se o professor não bloqueou esse período ou se o docente já ministra alguma 
+  disciplina em outra turma/curso no mesmo período.
 
 A semana tem 5 dias e cada dia possui 15 períodos:
 
@@ -24,7 +29,8 @@ A semana tem 5 dias e cada dia possui 15 períodos:
 13:10 - 14:00 ; 14:00 - 14:50 ; 14:50 - 15:40 ; 15:50 - 16:40 ; 16:40 - 17:30
 17:55 - 18:45 ; 18:45 - 19:35 ; 19:35 - 20:25 ; 20:35 - 21:25 ; 21:25 - 22:15
 
-Utilize bootstrap para estilizar a página. Utilize drag e drop JS para arrastar os componentes durante a semana e  utilize CSV para armazenar os dados.
+Utilize bootstrap para estilizar a página. Utilize drag e drop JS para arrastar os componentes 
+durante a semana e  utilize CSV para armazenar os dados.
 ```
 
 # Documentação
