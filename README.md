@@ -1,5 +1,5 @@
 # Trabalho Matriz Horario
-Este é um trabalho de controle de horários do IFRS feito em grupo com os colegas [Douglas Rauschkolb]() e <u>Marcos Gava</u> para a Disciplina de Princípios de Desenvolvimento para Internet do IFRS do segundo semestre de 2019.
+Este é um trabalho de controle de horários do IFRS feito em grupo com os colegas [Douglas Rauschkolb](https://github.com/DouglasRauschkolb) e <u>Marcos Gava</u> para a Disciplina de Princípios de Desenvolvimento para Internet do IFRS do segundo semestre de 2019.
 
 Para este trabalho foi utilizado PHP (lang), MVC (arq.), API (arq.), JQuery (front) e Bootstrap (front) sem utilizar nenhum framework - codado manualmente.
 
