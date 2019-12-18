@@ -44,8 +44,8 @@ durante a semana e  utilize CSV para armazenar os dados.
 composer install
 composer dump-autoload -o
 chmod 777 server.sh
-# necessário dar permissão aos controllers para que possam alterar arquivos 
-chmod 777 controllers/*
+# necessário dar permissão aos models para que possam alterar arquivos 
+chmod 777 models/*
 ./server.sh
 ```
 ### No Windows
